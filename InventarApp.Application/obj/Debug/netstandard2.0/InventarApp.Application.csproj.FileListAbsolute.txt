@@ -1,0 +1,11 @@
+D:\Marzenie Laboranta\InventarApp.Application\bin\Debug\netstandard2.0\InventarApp.Application.deps.json
+D:\Marzenie Laboranta\InventarApp.Application\bin\Debug\netstandard2.0\InventarApp.Application.dll
+D:\Marzenie Laboranta\InventarApp.Application\bin\Debug\netstandard2.0\InventarApp.Application.pdb
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.csprojAssemblyReference.cache
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.AssemblyInfoInputs.cache
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.AssemblyInfo.cs
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.dll
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.pdb
+D:\Marzenie Laboranta\InventarApp.Application\bin\Debug\netstandard2.0\InventarApp.Domain.dll
+D:\Marzenie Laboranta\InventarApp.Application\bin\Debug\netstandard2.0\InventarApp.Domain.pdb
+D:\Marzenie Laboranta\InventarApp.Application\obj\Debug\netstandard2.0\InventarApp.Application.csproj.CopyComplete

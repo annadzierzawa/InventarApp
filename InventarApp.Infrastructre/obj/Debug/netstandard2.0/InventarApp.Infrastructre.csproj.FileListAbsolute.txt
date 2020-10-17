@@ -1,0 +1,13 @@
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.deps.json
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.dll
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csprojAssemblyReference.cache
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.AssemblyInfoInputs.cache
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.AssemblyInfo.cs
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.pdb
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Application.dll
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Domain.dll
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Application.pdb
+D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Domain.pdb
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csproj.CopyComplete
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.dll
+D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.pdb
