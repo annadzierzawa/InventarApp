@@ -26,5 +26,14 @@ namespace InventarApp.Api.Controllers
             return Ok();
         }
 
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateUser(long id, UpdateUserCommand command)
+        {
+            command.Id = id;
+            await _usersService.UpdateUser(command);
+            return Ok();
+
+        }
+
     }
 }

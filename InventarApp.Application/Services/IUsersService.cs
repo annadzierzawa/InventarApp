@@ -11,6 +11,6 @@ namespace InventarApp.Application.Services
     {
         Task<long> AddUser(AddUserCommand command);
         void DeleteUser(long id);
-       // Task UpdateUser(UpdateUserCommand command);
+        Task UpdateUser(UpdateUserCommand command);
     }
 }

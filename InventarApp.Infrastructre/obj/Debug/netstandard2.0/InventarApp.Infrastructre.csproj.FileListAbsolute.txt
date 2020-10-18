@@ -11,3 +11,16 @@ D:\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\Inventa
 D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csproj.CopyComplete
 D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.dll
 D:\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.pdb
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.deps.json
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.dll
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Infrastructre.pdb
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Application.dll
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Domain.dll
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Application.pdb
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\bin\Debug\netstandard2.0\InventarApp.Domain.pdb
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csprojAssemblyReference.cache
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.AssemblyInfoInputs.cache
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.AssemblyInfo.cs
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csproj.CopyComplete
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.dll
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.pdb

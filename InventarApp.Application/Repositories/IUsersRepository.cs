@@ -12,5 +12,6 @@ namespace InventarApp.Application.Repositories
         Task<long> AddUser(User user);
         void DeleteUser(long id);
         Task UpdateUser(User user);
+        Task<User> GetUser(long id);
     }
 }

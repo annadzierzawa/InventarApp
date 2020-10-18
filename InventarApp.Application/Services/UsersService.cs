@@ -35,10 +35,18 @@ namespace InventarApp.Application.Services
             _usersRepository.DeleteUser(id);
         }
 
-        //public async Task UpdateUser(UpdateUserCommand command)
-        //{
+        public async Task UpdateUser(UpdateUserCommand command)
+        {
+            var user = await _usersRepository.GetUser(command.Id);
+            if (user is null)
+            {
+                throw new Exception("User does not exist");
+            }
 
-        //    await _usersRepository.UpdateUser(user);
-        //}
+            user.Name = command.Name;
+            user.Surname = command.Surname;
+            user.Role = command.Role;
+            await _usersRepository.UpdateUser(user);
+        }
     }
 }

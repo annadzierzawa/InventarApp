@@ -1,4 +1,5 @@
-﻿using InventarApp.Application.Repositories;
+﻿using InventarApp.Application.Commands;
+using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using InventarApp.Infrastructre.DataBase;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InventarApp.Infrastructre.Repositories
 {
-    public class ResourcesRepository: IUsersRepository
+    public class ResourcesRepository : IUsersRepository
     {
         private readonly InventarContext _context;
         public ResourcesRepository(InventarContext context)
@@ -28,9 +29,19 @@ namespace InventarApp.Infrastructre.Repositories
             throw new NotImplementedException();
         }
 
-        public Task UpdateUser(User user)
+        public async Task<User> GetUser(long id)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FindAsync(id);
+            return user;
+        }
+
+        public async Task UpdateUser(User user)
+        {
+
+            _context.Users.Update(user);
+
+            await _context.SaveChangesAsync();
+
         }
     }
 }
