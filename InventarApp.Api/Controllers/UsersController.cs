@@ -1,5 +1,7 @@
-﻿using InventarApp.Application.Commands;
+﻿using InventarApp.Api.Roles;
+using InventarApp.Application.Commands;
 using InventarApp.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,19 @@ namespace InventarApp.Api.Controllers
             _usersService = usersService;
         }
 
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody]AuthenticateCommand command)
+        {
+            var user = await _usersService.Authenticate(command.Login, command.Password);
+
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(user);
+        }
+
+        [Authorize(Roles=SystemRoles.Admin)]
         [HttpPost("add")]
         public async Task<IActionResult> AddUser(AddUserCommand command)
         {

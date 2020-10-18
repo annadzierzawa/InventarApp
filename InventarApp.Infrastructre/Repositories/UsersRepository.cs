@@ -1,11 +1,9 @@
-﻿using InventarApp.Application.Commands;
-using InventarApp.Application.Repositories;
+﻿using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using InventarApp.Infrastructre.DataBase;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventarApp.Infrastructre.Repositories
 {
@@ -29,6 +27,12 @@ namespace InventarApp.Infrastructre.Repositories
             _context.Users.Remove(user);
 
             await _context.SaveChangesAsync();
+        }
+
+        public Task<User> FindUserForAuthentication(string login, string password)
+        {
+            var user = _context.Users.FirstOrDefaultAsync(u => u.Login == login && u.Password == password);
+            return user;
         }
 
         public async Task<User> GetUser(long id)

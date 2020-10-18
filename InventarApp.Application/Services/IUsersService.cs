@@ -1,4 +1,5 @@
 ﻿using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace InventarApp.Application.Services
         Task<long> AddUser(AddUserCommand command);
         Task DeleteUser(long id);
         Task UpdateUser(UpdateUserCommand command);
+        Task<AuthenticatedUserDTO> Authenticate(string username, string password);
     }
 }

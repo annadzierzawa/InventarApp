@@ -1,8 +1,14 @@
 ﻿using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
+using InventarApp.Application.Helpers;
 using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,10 +17,13 @@ namespace InventarApp.Application.Services
     public class UsersService : IUsersService
     {
         private readonly IUsersRepository _usersRepository;
+        private readonly AppSettings _appSettings;
 
-        public UsersService(IUsersRepository usersRepository)
+        public UsersService(IUsersRepository usersRepository,
+            IOptions<AppSettings> appSettings)
         {
             _usersRepository = usersRepository;
+            _appSettings = appSettings.Value;
         }
         public async Task<long> AddUser(AddUserCommand command)
         {
@@ -30,6 +39,36 @@ namespace InventarApp.Application.Services
 
             return await _usersRepository.AddUser(user);
         }
+
+        public async Task<AuthenticatedUserDTO> Authenticate(string login, string password)
+        {
+            var user = await _usersRepository.FindUserForAuthentication(login,password);
+
+            // return null if user not found
+            if (user == null)
+                return null;
+
+            // authentication successful so generate jwt token
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Role, user.Role.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddHours(5),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString= tokenHandler.WriteToken(token);
+
+            var authenticatedUser = new AuthenticatedUserDTO(user.Id, user.Name, user.Surname, user.Login, user.Role, tokenString);
+
+            return authenticatedUser;
+        }
+
         public async Task DeleteUser(long id)
         {
             var user = await _usersRepository.GetUser(id);

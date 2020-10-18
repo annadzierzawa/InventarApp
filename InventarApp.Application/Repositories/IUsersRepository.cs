@@ -13,5 +13,6 @@ namespace InventarApp.Application.Repositories
         Task DeleteUser(User user);
         Task UpdateUser(User user);
         Task<User> GetUser(long id);
+        Task<User> FindUserForAuthentication(string login, string password);
     }
 }
