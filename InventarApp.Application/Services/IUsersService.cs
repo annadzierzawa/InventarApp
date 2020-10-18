@@ -10,7 +10,7 @@ namespace InventarApp.Application.Services
     public interface IUsersService
     {
         Task<long> AddUser(AddUserCommand command);
-        void DeleteUser(long id);
+        Task DeleteUser(long id);
         Task UpdateUser(UpdateUserCommand command);
     }
 }

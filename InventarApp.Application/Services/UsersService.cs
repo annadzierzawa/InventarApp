@@ -30,9 +30,15 @@ namespace InventarApp.Application.Services
 
             return await _usersRepository.AddUser(user);
         }
-        public void DeleteUser(long id)
+        public async Task DeleteUser(long id)
         {
-            _usersRepository.DeleteUser(id);
+            var user = await _usersRepository.GetUser(id);
+            if (user is null)
+            {
+                throw new Exception("User does not exist");
+            }
+
+             await _usersRepository.DeleteUser(user);
         }
 
         public async Task UpdateUser(UpdateUserCommand command)

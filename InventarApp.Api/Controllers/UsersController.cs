@@ -35,5 +35,11 @@ namespace InventarApp.Api.Controllers
 
         }
 
+        [HttpDelete("delete/{id}")]
+        public async Task DeleteUser(long id)
+        {
+           await _usersService.DeleteUser(id);
+        }
+
     }
 }

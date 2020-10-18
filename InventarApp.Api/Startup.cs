@@ -34,7 +34,7 @@ namespace InventarApp.Api
             services.AddDbContext<InventarContext>(opt =>
                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnecton")));
 
-            services.AddScoped<IUsersRepository, ResourcesRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IUsersService, UsersService>();
         }
 

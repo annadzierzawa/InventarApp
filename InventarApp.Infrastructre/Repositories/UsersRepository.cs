@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace InventarApp.Infrastructre.Repositories
 {
-    public class ResourcesRepository : IUsersRepository
+    public class UsersRepository : IUsersRepository
     {
         private readonly InventarContext _context;
-        public ResourcesRepository(InventarContext context)
+        public UsersRepository(InventarContext context)
         {
             _context = context;
         }
@@ -24,9 +24,11 @@ namespace InventarApp.Infrastructre.Repositories
             return user.Id;
         }
 
-        public void DeleteUser(long id)
+        public async Task DeleteUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Users.Remove(user);
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task<User> GetUser(long id)
