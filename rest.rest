@@ -2,13 +2,13 @@ POST http://localhost:5000/users/authenticate HTTP/1.1
 Content-Type: application/json
 
 {
-"Login":"Admin",
-"Password": "Admin"
+"Login":"LabTechnician2",
+"Password": "LabTechnician2"
 }
 
 ###
 POST http://localhost:5000/users/add HTTP/1.1
-Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2MDMwMzMyMTksImV4cCI6MTYwMzA1MTIxOSwiaWF0IjoxNjAzMDMzMjE5fQ.zeYajaudgbhTv_AKeWTbrvvdFUNqdiH-s4I4neKUTlA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjMiLCJyb2xlIjoiU2VydmljZVRlY2huaWNpYW4iLCJuYmYiOjE2MDMwMzk4MTcsImV4cCI6MTYwMzA1NzgxNywiaWF0IjoxNjAzMDM5ODE3fQ.20dAMV_dLbZ7zIgYTEFwIlPb1d0JWvXJ29XkVdEKRt8
 Content-Type: application/json
 
 {

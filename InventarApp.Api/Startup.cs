@@ -38,7 +38,7 @@ namespace InventarApp.Api
             services.AddDbContext<InventarContext>(opt =>
                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnecton")));
 
-            services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options));
+            services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options)); // to jest po to, ¿eby by³o widaæ appsettings gdzie indziej w projekcie
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
