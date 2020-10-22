@@ -16,5 +16,12 @@ namespace InventarApp.Api.Controllers
         {
             _resourceService = resourceService;
         }
+
+        public async Task<IActionResult> AddResource(AddResourceCommand command)
+        {
+            await _resourceService.AddResource(command);
+
+            return Ok();
+        }
     }
 }
