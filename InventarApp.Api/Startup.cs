@@ -65,6 +65,8 @@ namespace InventarApp.Api
 
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<IResourcesRepository, ResourcesRepository>();
+            services.AddScoped<IResourcesService, ResourcesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

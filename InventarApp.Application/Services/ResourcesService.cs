@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace InventarApp.Application.Services
 {
-    public class ResourceService : IResourceService
+    public class ResourcesService : IResourcesService
     {
         private readonly IResourcesRepository _resourcesRepository;
         private readonly AppSettings _appSettings;
 
-        public ResourceService(IResourcesRepository resourcesRepository,
+        public ResourcesService(IResourcesRepository resourcesRepository,
             IOptions<AppSettings> appSettings)
         {
             _resourcesRepository = resourcesRepository;
@@ -26,15 +26,12 @@ namespace InventarApp.Application.Services
             var resource = new Resource()
             {
                 Specification = command.Specification,
-                SeriesNumber = command.SeriesNumber,
+                SeriesNumber = Guid.NewGuid(),
                 InstalationKey = command.InstalationKey,
                 DateOfPurchase = command.DateOfPurchase,
-                Localization = command.Localization,
                 LocalizationId = command.LocalizationId,
                 UserId = command.UserId,
-                DateOfScrapping = command.DateOfScrapping,
-                Type = command.Type,
-                FailureReports = command.FailureReports
+                Type = command.Type
             };
 
             return await _resourcesRepository.AddResource(resource);
@@ -72,4 +69,4 @@ namespace InventarApp.Application.Services
         }
     }
 }
-}
+

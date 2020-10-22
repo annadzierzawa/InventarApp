@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventarApp.Application.Services
 {
-    public interface IResourceService
+    public interface IResourcesService
     {
         Task<long> AddResource(AddResourceCommand command);
         Task DeleteResource(long id);

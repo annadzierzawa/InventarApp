@@ -8,6 +8,7 @@ namespace InventarApp.Application.Commands
 {
     public class UpdateResourceCommand
     {
+        public long Id { get; set; }
         public string Specification { get; set; }
         public Guid SeriesNumber { get; set; }
         public string InstalationKey { get; set; }
