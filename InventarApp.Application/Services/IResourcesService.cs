@@ -1,7 +1,6 @@
 ﻿using InventarApp.Application.Commands;
-using System;
+using InventarApp.Application.DTOs;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InventarApp.Application.Services
@@ -11,5 +10,6 @@ namespace InventarApp.Application.Services
         Task<long> AddResource(AddResourceCommand command);
         Task DeleteResource(long id);
         Task UpdateResource(UpdateResourceCommand command);
+        Task<List<ResourceDTO>> GetResources();
     }
 }

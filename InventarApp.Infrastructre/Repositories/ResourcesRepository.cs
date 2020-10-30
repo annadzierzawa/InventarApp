@@ -1,9 +1,8 @@
 ﻿using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using InventarApp.Infrastructre.DataBase;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InventarApp.Infrastructre.Repositories
@@ -34,6 +33,12 @@ namespace InventarApp.Infrastructre.Repositories
         {
             var resource = await _context.Resources.FindAsync(id);
             return resource;
+        }
+
+        public async Task<List<Resource>> GetResources()
+        {
+            var resources = await _context.Resources.Include(r=>r.Localization).Include(r=>r.FailureReports).ToListAsync();
+            return resources;
         }
 
         public async Task UpdateResource(Resource resource)

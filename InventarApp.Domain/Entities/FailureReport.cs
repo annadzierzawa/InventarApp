@@ -1,7 +1,5 @@
 ﻿using InventarApp.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace InventarApp.Domain.Entities
 {
@@ -15,6 +13,5 @@ namespace InventarApp.Domain.Entities
         public DateTime DateOfReporting { get; set; }
         public RepairStatusEnum RepairStatus { get; set; }
         public Resource Resource { get; set; }
-
     }
 }

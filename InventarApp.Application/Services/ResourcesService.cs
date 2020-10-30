@@ -1,11 +1,12 @@
 ﻿using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Helpers;
 using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InventarApp.Application.Services
@@ -47,6 +48,27 @@ namespace InventarApp.Application.Services
 
             await _resourcesRepository.DeleteResource(resource);
         }
+
+        public async Task<List<ResourceDTO>> GetResources()
+        {
+            var resources = await _resourcesRepository.GetResources();
+            var resourceDTOs = resources.Select(r => new ResourceDTO()
+            {
+                Id = r.Id,
+                DateOfPurchase = r.DateOfPurchase,
+                DateOfScrapping = r.DateOfScrapping,
+                IsScrapped = r.DateOfScrapping != null,
+                InstalationKey = r.InstalationKey,
+                Localization = r.Localization.Name,
+                SeriesNumber = r.SeriesNumber,
+                Specification = r.Specification,
+                Type = r.Type,
+                UserId = r.UserId,
+                FailureReports = r.FailureReports.Select(f => new FailureReportShortDTO(f.Id, f.FailureDescription, f.DateOfReporting, f.RepairStatus)).ToList()
+            }).ToList();
+            return resourceDTOs;
+        }
+
         public async Task UpdateResource(UpdateResourceCommand command)
         {
             var resource = await _resourcesRepository.GetResource(command.Id);
@@ -59,12 +81,10 @@ namespace InventarApp.Application.Services
             resource.SeriesNumber = command.SeriesNumber;
             resource.InstalationKey = command.InstalationKey;
             resource.DateOfPurchase = command.DateOfPurchase;
-            resource.Localization = command.Localization;
             resource.LocalizationId = command.LocalizationId;
             resource.UserId = command.UserId;
             resource.DateOfScrapping = command.DateOfScrapping;
             resource.Type = command.Type;
-            resource.FailureReports = command.FailureReports;
             await _resourcesRepository.UpdateResource(resource);
         }
     }

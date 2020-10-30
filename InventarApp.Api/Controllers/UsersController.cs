@@ -1,5 +1,6 @@
 ﻿using InventarApp.Api.Roles;
 using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -57,6 +58,14 @@ namespace InventarApp.Api.Controllers
         {
            await _usersService.DeleteUser(id);
         }
+
+        [Authorize(Roles = SystemRoles.Admin)]
+        [HttpGet("all")]
+        public async Task<List<UserDTO>> GetUsers()
+        {
+            return await _usersService.GetAllUsers();
+        }
+
 
     }
 }

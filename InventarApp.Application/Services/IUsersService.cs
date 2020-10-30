@@ -14,5 +14,6 @@ namespace InventarApp.Application.Services
         Task DeleteUser(long id);
         Task UpdateUser(UpdateUserCommand command);
         Task<AuthenticatedUserDTO> Authenticate(string username, string password);
+        Task<List<UserDTO>> GetAllUsers();
     }
 }

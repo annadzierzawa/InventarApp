@@ -1,9 +1,9 @@
 ﻿using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using InventarApp.Infrastructre.DataBase;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace InventarApp.Infrastructre.Repositories
 {
@@ -25,7 +25,6 @@ namespace InventarApp.Infrastructre.Repositories
         public async Task DeleteUser(User user)
         {
             _context.Users.Remove(user);
-
             await _context.SaveChangesAsync();
         }
 
@@ -41,13 +40,16 @@ namespace InventarApp.Infrastructre.Repositories
             return user;
         }
 
+        public async Task<List<User>> GetUsers()
+        {
+            var users = await _context.Users.ToListAsync();
+            return users;
+        }
+
         public async Task UpdateUser(User user)
         {
-
             _context.Users.Update(user);
-
             await _context.SaveChangesAsync();
-
         }
     }
 }

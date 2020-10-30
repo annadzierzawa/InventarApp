@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,12 @@ namespace InventarApp.Application.Services
             }
 
              await _usersRepository.DeleteUser(user);
+        }
+
+        public async Task<List<UserDTO>> GetAllUsers()
+        {
+            var users = await _usersRepository.GetUsers();
+            return users.Select(u => new UserDTO(u.Id,u.Name,u.Surname,u.Login,u.Role)).ToList();
         }
 
         public async Task UpdateUser(UpdateUserCommand command)

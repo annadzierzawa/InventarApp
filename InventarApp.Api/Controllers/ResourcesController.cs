@@ -1,5 +1,6 @@
 ﻿using InventarApp.Api.Roles;
 using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,7 @@ namespace InventarApp.Api.Controllers
             await _resourceService.DeleteResource(id);
 
         }
+
         [Authorize]
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateResource(long id, UpdateResourceCommand command)
@@ -43,7 +45,14 @@ namespace InventarApp.Api.Controllers
             command.Id = id;
             await _resourceService.UpdateResource(command);
             return Ok();
+        }
 
+        [Authorize]
+        [HttpGet("all")]
+        public async Task<List<ResourceDTO>> GetResources()
+        {
+            var resources = await _resourceService.GetResources();
+            return resources;
         }
     }
 }
