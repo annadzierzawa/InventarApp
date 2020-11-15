@@ -35,6 +35,13 @@ namespace InventarApp.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddDbContext<InventarContext>(opt =>
                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnecton")));
 
@@ -81,12 +88,14 @@ namespace InventarApp.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+            //app.UseCors(b => b.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors("MyPolicy");
 
             app.UseEndpoints(endpoints =>
             {

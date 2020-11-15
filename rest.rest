@@ -58,11 +58,28 @@ Content-Type: application/json
 
 ###
 POST http://localhost:5000/failures/add HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYiLCJyb2xlIjoiU2VydmljZVRlY2huaWNpYW4iLCJuYmYiOjE2MDQwNzQ4NDEsImV4cCI6MTYwNDA5Mjg0MSwiaWF0IjoxNjA0MDc0ODQxfQ._eYVq6Ght5ILliqzKgAf0HHcVExrankkPUoAQ5F_LYU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjYiLCJyb2xlIjoiTGFiVGVjaG5pY2lhbiIsIm5iZiI6MTYwNDA3NTQwMiwiZXhwIjoxNjA0MDkzNDAyLCJpYXQiOjE2MDQwNzU0MDJ9.I_hr3eSb280mgAcHxm6EXdQObE89Hj5H_2n1wiXgKkY
 Content-Type: application/json
 
 {
 "FailureDescription":"Dymi sie",
-"ResourceId":1,
-"ResourceId":2
+"ResourceId":3,
+"ReporterId":5
 }
+
+###
+POST http://localhost:5000/localizations/add HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2MDQwODU3MzIsImV4cCI6MTYwNDEwMzczMCwiaWF0IjoxNjA0MDg1NzMyfQ.V_78HyEPq2D0z91pl379ArQftV_gOsRUGNCvl5y510o
+Content-Type: application/json
+
+{
+    "Name":"Lab 3"
+}
+###
+GET http://localhost:5000/users/all HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2MDQwODU3MzIsImV4cCI6MTYwNDEwMzczMCwiaWF0IjoxNjA0MDg1NzMyfQ.V_78HyEPq2D0z91pl379ArQftV_gOsRUGNCvl5y510o
+Content-Type: application/json
+###
+GET http://localhost:5000/resources/all HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2MDQwODU3MzIsImV4cCI6MTYwNDEwMzczMCwiaWF0IjoxNjA0MDg1NzMyfQ.V_78HyEPq2D0z91pl379ArQftV_gOsRUGNCvl5y510o
+Content-Type: application/json
