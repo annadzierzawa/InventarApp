@@ -54,5 +54,13 @@ namespace InventarApp.Api.Controllers
             var resources = await _resourceService.GetResources();
             return resources;
         }
+        [AllowAnonymous]
+        [HttpGet("qrdata/{serialNumber}")]
+        public async Task<ResourceSerialNumberDTO> GetResourceBySerialNumber(Guid serialNumber)
+        {
+            var resource = await _resourceService.GetResourceBySerialNumber(serialNumber);
+            return resource;
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using InventarApp.Domain.Entities;
 using InventarApp.Infrastructre.DataBase;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,6 +40,12 @@ namespace InventarApp.Infrastructre.Repositories
         {
             var resources = await _context.Resources.Include(r=>r.Localization).Include(r=>r.FailureReports).ToListAsync();
             return resources;
+        }
+
+        public async Task<Resource> GetResourceBySerialNumber(Guid seriesNumber)
+        {
+            var resourceSerialNumber = await _context.Resources.FirstOrDefaultAsync(s=>s.SeriesNumber== seriesNumber);
+            return resourceSerialNumber;
         }
 
         public async Task UpdateResource(Resource resource)

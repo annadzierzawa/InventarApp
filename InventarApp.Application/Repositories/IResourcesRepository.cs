@@ -1,4 +1,5 @@
 ﻿using InventarApp.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,5 +12,6 @@ namespace InventarApp.Application.Repositories
         Task<Resource> GetResource(long id);
         Task UpdateResource(Resource resource);
         Task<List<Resource>> GetResources();
+        Task<Resource> GetResourceBySerialNumber(Guid seriesNumber);
     }
 }

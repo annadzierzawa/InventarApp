@@ -83,3 +83,7 @@ Content-Type: application/json
 GET http://localhost:5000/resources/all HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE2MDQwODU3MzIsImV4cCI6MTYwNDEwMzczMCwiaWF0IjoxNjA0MDg1NzMyfQ.V_78HyEPq2D0z91pl379ArQftV_gOsRUGNCvl5y510o
 Content-Type: application/json
+
+###
+GET http://localhost:5000/resources/qrdata/2981a03f-ee30-45dd-bea6-4a1a8e1a7559 HTTP/1.1
+Content-Type: application/json

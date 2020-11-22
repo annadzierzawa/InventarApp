@@ -69,6 +69,22 @@ namespace InventarApp.Application.Services
             return resourceDTOs;
         }
 
+        public async Task<ResourceSerialNumberDTO> GetResourceBySerialNumber(Guid seriesNumber)
+        {
+            var resource = await _resourcesRepository.GetResourceBySerialNumber(seriesNumber);
+            if (resource == null)
+            {
+                return null;
+            }
+            var resourceSerialNumberDTO = new ResourceSerialNumberDTO()
+            {
+                Id = resource.Id,
+                SeriesNumber = resource.SeriesNumber,
+                Specification = resource.Specification
+            };
+            return resourceSerialNumberDTO;
+        }
+
         public async Task UpdateResource(UpdateResourceCommand command)
         {
             var resource = await _resourcesRepository.GetResource(command.Id);
