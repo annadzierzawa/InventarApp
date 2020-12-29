@@ -13,5 +13,14 @@ namespace InventarApp.Domain.Entities
         public DateTime DateOfReporting { get; set; }
         public RepairStatusEnum RepairStatus { get; set; }
         public Resource Resource { get; set; }
+
+        public FailureReport(string failureDescription, long resourceId, long reporterId, DateTime dateOfReporting, RepairStatusEnum repairStatus)
+        {
+            FailureDescription = failureDescription;
+            ResourceId = resourceId;
+            ReporterId = reporterId;
+            DateOfReporting = dateOfReporting;
+            RepairStatus = repairStatus;
+        }
     }
 }

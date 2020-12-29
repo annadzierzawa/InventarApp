@@ -24,17 +24,8 @@ namespace InventarApp.Application.Services
         }
         public async Task<long> AddResource(AddResourceCommand command)
         {
-            var resource = new Resource()
-            {
-                Specification = command.Specification,
-                SeriesNumber = Guid.NewGuid(),
-                InstalationKey = command.InstalationKey,
-                DateOfPurchase = command.DateOfPurchase,
-                LocalizationId = command.LocalizationId,
-                UserId = command.UserId,
-                Type = command.Type
-            };
-
+            var resource = new Resource(command.Specification, Guid.NewGuid(), command.InstalationKey, command.DateOfPurchase, command.LocalizationId, command.UserId, command.Type);
+          
             return await _resourcesRepository.AddResource(resource);
         }
 

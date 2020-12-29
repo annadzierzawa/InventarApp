@@ -24,3 +24,4 @@ D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csproj.CopyComplete
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.dll
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.pdb
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Infrastructre\obj\Debug\netstandard2.0\InventarApp.Infrastructre.csproj.CoreCompileInputs.cache

@@ -28,16 +28,8 @@ namespace InventarApp.Application.Services
         }
         public async Task<long> AddUser(AddUserCommand command)
         {
-            var user = new User()
-            {
-                Name = command.Name,
-                Surname = command.Surname,
-                Login = command.Login,
-                Password = command.Password,
-                Role = command.Role
-
-            };
-
+            var user = new User(command.Name, command.Surname, command.Login, command.Password, command.Role);
+           
             return await _usersRepository.AddUser(user);
         }
 

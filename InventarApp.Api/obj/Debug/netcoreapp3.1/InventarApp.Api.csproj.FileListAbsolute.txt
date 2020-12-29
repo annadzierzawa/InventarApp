@@ -65,7 +65,6 @@ D:\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFr
 D:\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\InventarApp.Api.MvcApplicationPartsAssemblyInfo.cache
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\InventarApp.Api.exe
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\InventarApp.Api.deps.json
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\InventarApp.Api.runtimeconfig.json
@@ -129,3 +128,6 @@ D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\Inventa
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\InventarApp.Api.pdb
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\InventarApp.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\InventarApp.Api.csproj.CoreCompileInputs.cache
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\scopedcss\bundle\InventarApp.Api.styles.css
+D:\Projekt IO\Marzenie Laboranta\InventarApp.Api\obj\Debug\netcoreapp3.1\InventarApp.Api.genruntimeconfig.cache

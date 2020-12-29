@@ -17,10 +17,7 @@ namespace InventarApp.Application.Services
 
         public async Task<long> AddLocalization(AddLocalizationCommand command)
         {
-            var localization = new Localization()
-            {
-                Name = command.Name
-            };
+            var localization = new Localization(command.Name);
 
             return await _localizationsRepository.AddLocalizations(localization);
         }

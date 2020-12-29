@@ -21,5 +21,16 @@ namespace InventarApp.Domain.Entities
         {
             DateOfScrapping = DateTime.Now;
         }
+
+        public Resource(string specification, Guid seriesNumber, string instalationKey, DateTime dateOfPurchase, long localizationId, long? userId, ResourceTypeEnum type)
+        {
+            Specification = specification;
+            SeriesNumber = seriesNumber;
+            InstalationKey = instalationKey;
+            DateOfPurchase = dateOfPurchase;
+            LocalizationId = localizationId;
+            UserId = userId;
+            Type = type;
+        }
     }
 }

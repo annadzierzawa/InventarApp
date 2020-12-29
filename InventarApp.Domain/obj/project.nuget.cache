@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "An6ccj9+UOfJceQq4YnSASdC2rE2311yZAYd6NntuNYMDe1WgZt5IqFXXsEPv+ceI79LUhK5NN/N3cnpudfS6g==",
+  "success": true,
+  "projectFilePath": "D:\\Projekt IO\\Marzenie Laboranta\\InventarApp.Domain\\InventarApp.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

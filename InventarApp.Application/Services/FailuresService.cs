@@ -20,14 +20,8 @@ namespace InventarApp.Application.Services
 
         public async Task<long> AddFailureReport(AddFailureCommand command)
         {
-            var failureReport = new FailureReport()
-            {
-                FailureDescription = command.FailureDescription,
-                ResourceId = command.ResourceId,
-                ReporterId = command.ReporterId,
-                DateOfReporting = DateTime.Now,
-                RepairStatus = RepairStatusEnum.Waiting
-            };
+            var failureReport = new FailureReport(command.FailureDescription,command.ResourceId,command.ReporterId,DateTime.Now,RepairStatusEnum.Waiting);
+
             return await _failuresRepository.AddFailuresReport(failureReport);
         }
 

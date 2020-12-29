@@ -7,5 +7,10 @@ namespace InventarApp.Domain.Entities
         public long Id { get; set; }
         public string Name { get; set; }
         public List<Resource> Resources { get; set; }
+
+        public Localization(string name)
+        {
+            Name = name;
+        }
     }
 }
