@@ -9,8 +9,8 @@
 /InventarApp.Application/obj
 /InventarApp.Domain/bin
 /InventarApp.Domain/obj
-/InventarApp.Infrastructure/bin
-/InventarApp.Infrastructure/obj
+/InventarApp.Infrastructre/bin
+/InventarApp.Infrastructre/obj
 /Tests/bin
 /Tests/obj
 /DomainTests/bin
