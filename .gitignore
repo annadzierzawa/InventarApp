@@ -4,8 +4,14 @@
 
 /.vs
 /InventarApp.Api/bin
+/InventarApp.Api/obj
 /InventarApp.Application/bin
+/InventarApp.Application/obj
 /InventarApp.Domain/bin
+/InventarApp.Domain/obj
 /InventarApp.Infrastructure/bin
+/InventarApp.Infrastructure/obj
 /Tests/bin
+/Tests/obj
 /DomainTests/bin
+/DomainTests/obj
