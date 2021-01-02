@@ -2,4 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/InventarApp.Api/v16
+/.vs
+/InventarApp.Api/bin
+/InventarApp.Application/bin
+/InventarApp.Domain/bin
+/InventarApp.Infrastructure/bin
+/Tests/bin
+/DomainTests/bin
