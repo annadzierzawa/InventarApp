@@ -1,5 +1,6 @@
 ﻿using InventarApp.Api.Roles;
 using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,12 @@ namespace InventarApp.Api.Controllers
         {
             await _failuresService.DeleteFailureReport(id);
 
+         }
+        [Authorize]
+        [HttpGet("all-waiting")]
+        public async Task<List<FailureReportShortDTO>> GetFailuresReportShort()
+        {
+            return await _failuresService.GetFailuresReportShort();
         }
     }
 }

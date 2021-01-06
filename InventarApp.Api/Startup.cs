@@ -37,9 +37,9 @@ namespace InventarApp.Api
             services.AddControllers();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
+                builder.AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowAnyOrigin();
             }));
 
             services.AddDbContext<InventarContext>(opt =>
@@ -90,12 +90,12 @@ namespace InventarApp.Api
 
             //app.UseHttpsRedirection();
             //app.UseCors(b => b.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
+            app.UseCors("MyPolicy");
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCors("MyPolicy");
 
             app.UseEndpoints(endpoints =>
             {

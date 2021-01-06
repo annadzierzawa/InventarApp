@@ -1,6 +1,10 @@
 ﻿using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
+using InventarApp.Domain.Enums;
 using InventarApp.Infrastructre.DataBase;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InventarApp.Infrastructre.Repositories
@@ -35,6 +39,12 @@ namespace InventarApp.Infrastructre.Repositories
         {
             _context.FailureReports.Update(failureReport);
             await _context.SaveChangesAsync();
+        }
+        public async Task<List<FailureReport>> GetAllActiveFailureReports()
+        {
+            var failureReports = await _context.FailureReports.ToListAsync();
+            failureReports.Where(f => f.RepairStatus == RepairStatusEnum.Waiting);
+            return failureReports;
         }
     }
 }

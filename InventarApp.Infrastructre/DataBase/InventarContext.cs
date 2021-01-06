@@ -35,8 +35,6 @@ namespace InventarApp.Infrastructre.DataBase
 
             modelBuilder.Entity<FailureReport>()
                 .HasKey(f => f.Id);
-
-
         }
     }
 

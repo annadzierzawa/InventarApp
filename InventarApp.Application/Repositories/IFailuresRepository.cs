@@ -1,4 +1,5 @@
 ﻿using InventarApp.Domain.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace InventarApp.Application.Repositories
@@ -9,5 +10,6 @@ namespace InventarApp.Application.Repositories
         Task DeleteFailuresReport(FailureReport failureReport);
         Task<FailureReport> GetFailuresReport(long id);
         Task UpdateFailureReport(FailureReport failureReport);
+        Task<List<FailureReport>> GetAllActiveFailureReports();
     }
 }

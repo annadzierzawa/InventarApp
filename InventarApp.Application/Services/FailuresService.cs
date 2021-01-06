@@ -1,8 +1,11 @@
 ﻿using InventarApp.Application.Commands;
+using InventarApp.Application.DTOs;
 using InventarApp.Application.Repositories;
 using InventarApp.Domain.Entities;
 using InventarApp.Domain.Enums;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InventarApp.Application.Services
@@ -54,6 +57,12 @@ namespace InventarApp.Application.Services
             }
 
             await _failuresRepository.UpdateFailureReport(failureReport);
+        }
+
+        public async Task<List<FailureReportShortDTO>> GetFailuresReportShort()
+        {
+            var failuresReportShort = await _failuresRepository.GetAllActiveFailureReports();
+            return failuresReportShort.Select(f => new FailureReportShortDTO(f.Id, f.FailureDescription, f.DateOfReporting, f.RepairStatus)).ToList();
         }
     }
 }

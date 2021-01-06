@@ -23,7 +23,7 @@ namespace InventarApp.Api.Controllers
 
         [AllowAnonymous]
         [HttpPost("authenticate")]                      //tym postem strzelamy po token
-        public async Task<IActionResult> Authenticate([FromBody]AuthenticateCommand command)
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticateCommand command)
         {
             var user = await _usersService.Authenticate(command.Login, command.Password);
 
@@ -33,12 +33,11 @@ namespace InventarApp.Api.Controllers
             return Ok(user);
         }
 
-        [Authorize(Roles=SystemRoles.Admin)]   //autoryzuje po roli
+        [Authorize(Roles = SystemRoles.Admin)]   //autoryzuje po roli
         [HttpPost("add")]
         public async Task<IActionResult> AddUser(AddUserCommand command)
         {
             await _usersService.AddUser(command);
-
             return Ok();
         }
 
@@ -49,14 +48,13 @@ namespace InventarApp.Api.Controllers
             command.Id = id;
             await _usersService.UpdateUser(command);
             return Ok();
-
         }
 
         [Authorize(Roles = SystemRoles.Admin)]
         [HttpDelete("delete/{id}")]
         public async Task DeleteUser(long id)
         {
-           await _usersService.DeleteUser(id);
+            await _usersService.DeleteUser(id);
         }
 
         [Authorize(Roles = SystemRoles.Admin)]
@@ -65,7 +63,5 @@ namespace InventarApp.Api.Controllers
         {
             return await _usersService.GetAllUsers();
         }
-
-
     }
 }
